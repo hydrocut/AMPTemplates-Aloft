@@ -1,0 +1,2 @@
+# Le lanceur est lu par bash dans le conteneur : toujours en LF.
+*.sh text eol=lf

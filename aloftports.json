@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "Both",
+        "Port": 15636,
+        "Ref": "GamePort",
+        "Name": "Port du jeu",
+        "Description": "Donne au jeu par serverport. Aloft n'a pas de port par defaut documente : 15636 est celui d'un guide communautaire Steam. Les joueurs entrent par la liste des serveurs ou par le code pour rejoindre, jamais par IP:port."
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 15637,
+        "Ref": "QueryPort",
+        "Name": "Port de requete Steam (reserve)",
+        "Description": "Reserve par precaution : le meme guide communautaire cite 15637 comme port de requete Steam. Le jeu n'a aucune option pour le choisir : garder le port du jeu + 1."
+    }
+]

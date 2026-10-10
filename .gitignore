@@ -1,0 +1,14 @@
+# Ce depot ne contient que le template. Aloft est payant : ses fichiers, le prefixe Wine
+# et les mondes restent sur le serveur, jamais ici.
+jeu/
+donnees/
+.wine/
+recupere-*/
+winetricks
+*.log
+ServerRoomCode.txt
+code-pour-rejoindre.txt
+__pycache__/
+
+# Notes internes de TeamKit (essais, etapes), pas dans le depot public
+FAISABILITE.md

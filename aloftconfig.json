@@ -1,0 +1,167 @@
+[
+    {
+        "DisplayName": "Nom du monde",
+        "Category": "Aloft:public",
+        "Subcategory": "Monde:public:1",
+        "Description": "Le nom de la sauvegarde. 1 à 20 lettres sans accent ou chiffres, sans espace ni signe (le serveur refuse de démarrer sinon et le dit dans la console). Au premier démarrage, le monde est créé avec les trois réglages ci-dessous (cela prend quelques minutes) ; ensuite il est simplement rechargé. Changer de nom = créer un autre monde : l'ancien reste dans donnees/. Le nom respecte les majuscules.",
+        "Keywords": "monde,map,sauvegarde,save,world",
+        "FieldName": "NomMonde",
+        "InputType": "text",
+        "ParamFieldName": "NomMonde",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "TeamKit",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Nombre d'îles (création du monde)",
+        "Category": "Aloft:public",
+        "Subcategory": "Monde:public:1",
+        "Description": "Taille du monde. Lu seulement à la création : un monde existant garde sa taille. Option islandcount du jeu.",
+        "Keywords": "iles,islands,taille,islandcount",
+        "FieldName": "Iles",
+        "InputType": "enum",
+        "ParamFieldName": "Iles",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "normal",
+        "EnumValues": {
+            "normal": "Normal",
+            "big": "Grand",
+            "huge": "Immense"
+        }
+    },
+    {
+        "DisplayName": "Corruption (création du monde)",
+        "Category": "Aloft:public",
+        "Subcategory": "Monde:public:1",
+        "Description": "Quantité de corruption fongique à soigner dans le monde. Lu seulement à la création. Option corruptioncount du jeu.",
+        "Keywords": "corruption,champignons,difficulte,corruptioncount",
+        "FieldName": "Corruption",
+        "InputType": "enum",
+        "ParamFieldName": "Corruption",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "normal",
+        "EnumValues": {
+            "none": "Aucune",
+            "little": "Un peu",
+            "normal": "Normale",
+            "lots": "Beaucoup",
+            "shrooms": "Envahissante"
+        }
+    },
+    {
+        "DisplayName": "Mode créatif (création du monde)",
+        "Category": "Aloft:public",
+        "Subcategory": "Monde:public:1",
+        "Description": "Coché : monde en mode créatif (construction libre). Décoché : survie. Lu seulement à la création. Option creative du jeu.",
+        "Keywords": "creatif,creative,survie,mode",
+        "FieldName": "Creatif",
+        "InputType": "checkbox",
+        "ParamFieldName": "Creatif",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Nom du serveur",
+        "Category": "Aloft:public",
+        "Subcategory": "Serveur:dns:2",
+        "Description": "Le nom affiché dans la liste des serveurs du jeu. Le jeu refuse les espaces : elles sont remplacées par _ au démarrage. Lettres sans accent, chiffres, _ et - seulement (64 au plus). Aloft n'a pas de message d'accueil : ce nom est le seul texte que voient les joueurs.",
+        "Keywords": "nom,serveur,servername,liste",
+        "FieldName": "NomServeur",
+        "InputType": "text",
+        "ParamFieldName": "NomServeur",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "Serveur_FR_TeamKit",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Visible dans la liste des serveurs",
+        "Category": "Aloft:public",
+        "Subcategory": "Serveur:dns:2",
+        "Description": "Coché : le serveur apparaît dans Multijoueur > Rejoindre (il peut mettre 15 à 30 minutes à s'y montrer). Décoché : on ne peut entrer qu'avec le code pour rejoindre, affiché dans la console à chaque démarrage. Option isvisible du jeu.",
+        "Keywords": "visible,public,liste,isvisible,prive",
+        "FieldName": "Visible",
+        "InputType": "checkbox",
+        "ParamFieldName": "Visible",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Joueurs maximum",
+        "Category": "Aloft:public",
+        "Subcategory": "Serveur:dns:2",
+        "Description": "De 1 à 8 : le multijoueur d'Aloft est limité à 8 joueurs. Option playercount du jeu.",
+        "Keywords": "joueurs,places,slots,playercount,max",
+        "FieldName": "JoueursMax",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "8",
+        "ParamFieldName": "JoueursMax",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "8",
+        "Suffix": "joueurs",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Îles d'origine protégées",
+        "Category": "Aloft:public",
+        "Subcategory": "Accès et administration:lock:3",
+        "Description": "Coché : un nouveau joueur ne peut faire apparaître son île d'origine qu'une fois que l'hôte (un administrateur) lui a fait confiance ; sinon il voit « The Host Needs to Trust You Before You Can Spawn Your Home Island ». Décoché (défaut du jeu) : chacun fait apparaître son île librement. Option privateislands du jeu.",
+        "Keywords": "iles,privees,protection,confiance,privateislands",
+        "FieldName": "IlesPrivees",
+        "InputType": "checkbox",
+        "ParamFieldName": "IlesPrivees",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Administrateurs (SteamID64)",
+        "Category": "Aloft:public",
+        "Subcategory": "Accès et administration:lock:3",
+        "Description": "Les joueurs administrateurs en jeu, par leur SteamID64 (17 chiffres, ex. 76561198000000000 ; on le trouve sur steamid.io à partir du profil Steam), séparés par des espaces ou des virgules. Vide = aucun administrateur. Option admin du jeu, répétée pour chacun.",
+        "Keywords": "admin,administrateur,steamid,steam64,moderateur",
+        "FieldName": "Admins",
+        "InputType": "text",
+        "ParamFieldName": "Admins",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Options du jeu en plus",
+        "Category": "Aloft:public",
+        "Subcategory": "Avancé:tune:4",
+        "Description": "Pour les connaisseurs : options du serveur Aloft au format cle#valeur#, séparées par des espaces, ajoutées à la fin de la ligne de chargement. Exemple : disablevideo#true# (option citée par un hébergeur, absente du wiki officiel). Les lignes officielles des scripts du jeu sont affichées dans la console à chaque Update. Vide par défaut.",
+        "Keywords": "options,arguments,avance,disablevideo",
+        "FieldName": "OptionsEnPlus",
+        "InputType": "text",
+        "ParamFieldName": "OptionsEnPlus",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Composants Windows (winetricks)",
+        "Category": "Aloft:public",
+        "Subcategory": "Avancé:tune:4",
+        "Description": "Composants Windows installés dans Wine à chaque Update, séparés par des espaces : noms de paquets winetricks. Par défaut vcrun2022 (Visual C++ 2015-2022, demandé par l'œuf Pterodactyl d'Aloft). Si le serveur plante au chargement, essayer vcrun2022 mf (Media Foundation), puis lancer Update. Vide = rien en plus.",
+        "Keywords": "wine,winetricks,vcrun,dll,windows,composants",
+        "FieldName": "ComposantsWindows",
+        "InputType": "text",
+        "ParamFieldName": "ComposantsWindows",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "vcrun2022",
+        "EnumValues": {}
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "UpdateStageName": "Dossier du jeu",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}jeu",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Dossier des sauvegardes",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}donnees",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Telechargement d'Aloft par SteamCMD (compte Steam qui possede le jeu, version Windows)",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1660080",
+        "UpdateSourceArgs": "1660080",
+        "UpdateSourceTarget": "{{$FullBaseDir}}jeu",
+        "ForceDownloadPlatform": "Windows",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Script de lancement",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/hydrocut/AMPTemplates-Aloft/main/scripts/lancer-aloft.sh",
+        "UpdateSourceArgs": "lancer-aloft.sh",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "winetricks (version figee 20260125, comme le template ASKA de CubeCoders)",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/Winetricks/winetricks/refs/tags/20260125/src/winetricks",
+        "UpdateSourceArgs": "winetricks",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Prefixe Wine, composants Windows et dossier des sauvegardes",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "\"{{$FullBaseDir}}lancer-aloft.sh\" preparer \"composants={{ComposantsWindows}}\"",
+        "SkipOnFailure": false
+    }
+]
