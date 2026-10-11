@@ -112,7 +112,7 @@ ATTENDU_KVP = {
     'App.SteamForceLoginPrompt': 'True',        # comme Starbound / Stardew Valley / Risk of Rain 2 chez CubeCoders
     'App.ExitMethod': 'SIGTERM',                # le lanceur le traduit en Ctrl+C pour Aloft.exe
     'App.ExecutableLinux': '/bin/bash',
-    'App.MaxUsers': '0',                        # lignes d'arrivée/départ encore inconnues
+    'App.MaxUsers': '8',                        # = défaut de JoueursMax (capacité affichée ; lignes d'arrivée inconnues)
     'Meta.ContainerPolicy': 'Required',
     'Meta.SpecificDockerImage': 'cubecoders/ampbase:wine-stable',
     'Meta.DisplayImageSource': 'steam:1660080',
@@ -194,6 +194,8 @@ for champ, variable in (('Visible', 'VISIBLE'), ('IlesPrivees', 'PRIVEES'), ('Cr
 j = par_nom['JoueursMax']
 if (j['MinValue'], j['MaxValue']) != ('1', '8') or '-le 8 ]' not in script:
     soucis.append('JoueursMax : 1 à 8 (limite du jeu, dite par le développeur), dans AMP comme dans le lanceur')
+if cles.get('App.MaxUsers') != j['DefaultValue']:
+    soucis.append('App.MaxUsers doit valoir le défaut de JoueursMax (%s) : sinon AMP et le site affichent une autre capacité' % j['DefaultValue'])
 # Options du serveur Aloft : wiki officiel (Dedicated Server how-to) et notes de version 0.3.4.23.
 DOC = {'create', 'islandcount', 'corruptioncount', 'creative', 'log', 'load', 'servername', 'isvisible',
        'privateislands', 'playercount', 'serverport', 'admin'}

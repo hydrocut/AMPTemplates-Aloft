@@ -125,7 +125,9 @@ SteamID64s, separated by spaces or commas. Extra options: `key#value#` tokens on
 | Options du jeu en plus | any `key#value#` | empty |
 | Composants Windows | winetricks verbs (Update) | `vcrun2022` |
 
-Aloft has no message-of-the-day: the server name is the only text players see.
+Aloft has no message-of-the-day: the server name is the only text players see. `App.MaxUsers=8`
+(the default of *Joueurs maximum*) is only the capacity AMP shows: join/leave lines are not known
+yet, so AMP's player list stays empty.
 
 ## How players join
 
